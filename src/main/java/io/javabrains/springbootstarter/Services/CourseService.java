@@ -1,24 +1,19 @@
 package io.javabrains.springbootstarter.Services;
 
 import io.javabrains.springbootstarter.Models.Course;
-import io.javabrains.springbootstarter.Models.Topic;
-import io.javabrains.springbootstarter.Repositores.TopicRepository;
+import io.javabrains.springbootstarter.Repositores.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-// singelton
+
 @Service
-public class TopicsService {
+public class CourseService {
 
     @Autowired
-    private TopicRepository topicRepository;
+    private CourseRepository courseRepository;
 
    /* List<Topic> topics = new ArrayList<>(Arrays.asList(
             new Topic(
@@ -31,24 +26,24 @@ public class TopicsService {
                     "Java Core Description")
     ));*/
 
-    public List<Topic> getAllTopics(){
-        List<Topic> topics = new ArrayList<>();
-        topicRepository.findAll().forEach(topics::add);
-        return topics;
+    public List<Course> getAllCourses(String id){
+        List<Course> course = new ArrayList<>();
+        courseRepository.findAll().forEach(course::add);
+        return course;
     }
 
-    public Topic getTopic(String id){
+    public Course getCourse(String id){
         //return topics.stream().filter(topic -> topic.getId().equals(id)).findFirst().get();
-        return topicRepository.findOne(id);
+        return courseRepository.findOne(id);
     }
 
-    public void addTopic(Topic topic){
+    public void addCourse(Course course){
         //topics.add(topic);
-        topicRepository.save(topic);
+        courseRepository.save(course);
     }
 
     // removed - String id - as argument
-    public void updateTopic(Topic topic) {
+    public void updateCourse(Course course) {
         /*for(int i = 0; i < topics.size(); ++i){
             Topic t = topics.get(i);
             if(t.getId().equals(id)){
@@ -56,13 +51,12 @@ public class TopicsService {
                 return;
             }
         }*/
-        topicRepository.save(topic);
+        courseRepository.save(course);
 
     }
 
-    public void deleteTopic(String id) {
+    public void deleteCourse(String id) {
         //topics.removeIf(topic -> topic.getId().equals(id));
-        topicRepository.delete(id);
+        courseRepository.delete(id);
     }
-
 }

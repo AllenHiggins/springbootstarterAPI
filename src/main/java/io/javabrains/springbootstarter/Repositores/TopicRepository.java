@@ -6,5 +6,4 @@ import org.springframework.data.repository.CrudRepository;
 // Only need to implement none common opp's
 public interface TopicRepository extends CrudRepository<Topic, String> {
 
-
 }
