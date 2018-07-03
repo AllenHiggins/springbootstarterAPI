@@ -27,6 +27,6 @@ public class TopicsController {
 
     @RequestMapping(method=RequestMethod.POST,value="/topics")
     public void addTopic(@RequestBody Topic topic){
-        topicsService.addTopic(topic);
+        topicsService.addTopic(topic );
     }
 }
