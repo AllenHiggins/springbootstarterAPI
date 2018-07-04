@@ -26,14 +26,15 @@ public class CourseService {
                     "Java Core Description")
     ));*/
 
-    public List<Course> getAllCourses(String id){
-        List<Course> course = new ArrayList<>();
-        courseRepository.findAll().forEach(course::add);
-        return course;
+    public List<Course> getAllCourses(String topicId){
+        List<Course> courses = new ArrayList<>();
+        courseRepository.findByTopicId(topicId).forEach(courses::add);
+        return courses;
     }
 
     public Course getCourse(String id){
         //return topics.stream().filter(topic -> topic.getId().equals(id)).findFirst().get();
+        //courseRepository.findByName(id);
         return courseRepository.findOne(id);
     }
 

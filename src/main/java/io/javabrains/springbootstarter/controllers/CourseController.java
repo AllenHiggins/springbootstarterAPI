@@ -14,10 +14,9 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
-    @RequestMapping("topics/{id}/courses")
+    @RequestMapping("/topics/{id}/courses")
     public List<Course> getAllCourses(@PathVariable String id){
         return courseService.getAllCourses(id);
-
     }
 
     @RequestMapping("/topics/{topicId}/course/{id}")

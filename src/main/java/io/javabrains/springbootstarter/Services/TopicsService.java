@@ -1,16 +1,10 @@
 package io.javabrains.springbootstarter.Services;
-
-import io.javabrains.springbootstarter.Models.Course;
 import io.javabrains.springbootstarter.Models.Topic;
 import io.javabrains.springbootstarter.Repositores.TopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 // singelton
